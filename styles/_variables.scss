@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap"); // Lato Regular
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap"); // Lato Light
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap"); // Lato Bold
+
+$font-family: "Lato", sans-serif;
+$font-family-light: "Lato", sans-serif;
+$font-family-bold: "Lato", sans-serif;
+$greyish-brown: #4a4a4a;
+$warm-grey: #9b9b9b;
+$light-gray: #e5e5e5;
+$lighter-gray: #f4f1f1;
+$light-color: #fff;
+$light-color-transparent: rgba(255, 255, 255, 0.8);
+$light-color-transparent2: rgba(255, 255, 255, 0.5);
+$bluish: #008bcf;
+$bluish-lighter: #0099d9;
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+%reset-button-styles {
+    border: none;
+    cursor: pointer;
+}
+
+%intro-styles {
+    font-family: $font-family-light;
+    font-size: 1rem;
+    font-weight: normal;
+    color: $greyish-brown;
+    width: 55%;
+    margin: auto;
+}
+
+%title-styles {
+    font-family: $font-family-light;
+    font-size: 2.625rem;
+    font-weight: 300;
+    margin: 0.8rem 0;
+}
+
+@mixin article-styles {
+    flex-direction: column;
+    width: 100vw;
+    box-sizing: border-box;
+    background-size: 100% 100%;
+    text-align: center;
+}

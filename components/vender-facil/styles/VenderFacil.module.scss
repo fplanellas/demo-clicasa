@@ -1,0 +1,158 @@
+@import "../../../styles/variables";
+
+.article {
+    @include article-styles;
+    @include flex-center;
+    background: transparent url("/images/fondo2.png") no-repeat top center local;
+    background-size: 100% auto;
+    margin-top: -0.5rem;
+    padding-top: 6rem;
+    z-index: 200;
+
+    &__title {
+        @extend %title-styles;
+        color: $bluish;
+        margin-bottom: 0;
+    }
+
+    &__img-container-movile {
+        display: none;
+        width: 100%;
+    }
+
+    .card-grid {
+        display: grid;
+        grid-gap: 0;
+        margin: auto;
+        width: 70%;
+        grid-template-columns: repeat(4, 1fr);
+
+        .card {
+            align-items: top;
+            background-color: $light-color-transparent2;
+            display: flex;
+            padding: 1rem;
+            text-align: left;
+            margin-bottom: 1rem;
+
+            &.active {
+                background-color: $light-color;
+                border-bottom: 8px solid $bluish;
+            }
+
+            &__circle {
+                align-items: center;
+                background-color: $bluish;
+                border-radius: 50%;
+                display: flex;
+                height: 2.65rem;
+                justify-content: center;
+                width: 2.65rem;
+            }
+
+            &__container {
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                margin-right: 0.5rem;
+                width: 20%;
+            }
+
+            &__content {
+                flex-grow: 1;
+                font-family: $font-family;
+                font-weight: normal;
+
+                .card__text {
+                    color: $warm-grey;
+                    font-size: 0.875rem;
+                }
+
+                .card__title {
+                    color: $greyish-brown;
+                    font-size: 1rem;
+                    margin-top: 0;
+                }
+            }
+
+            &__number {
+                color: $light-color;
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+    &__img-container {
+        margin: auto;
+        overflow: hidden;
+        width: 65%;
+        display: block;
+    }
+}
+
+.quote {
+    @include flex-center;
+    width: 70%;
+    height: 5rem;
+    opacity: 1;
+    transition: opacity 1s;
+    margin-bottom: 1rem;
+}
+
+.quote-change {
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+// Media queries
+@media (max-width: 1024px) {
+    .article {
+        .card-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .article {
+        padding: 1rem;
+        margin: 0;
+
+        &__title {
+            font-size: 1.5rem;
+        }
+
+        &__img-container-movile {
+            display: block;
+        }
+
+        .card-grid {
+            grid-template-columns: 1fr;
+            width: 100%;
+
+            .card {
+                @include flex-center;
+                text-align: left;
+                width: 100%;
+                box-sizing: border-box;
+                padding-left: 0.5rem;
+
+                &.active {
+                    border: 0;
+                }
+
+                &__content {
+                    width: 80%;
+                }
+            }
+        }
+
+        &__img-container {
+            display: none;
+        }
+    }
+
+    .quote {
+        font-size: 0.875rem;
+    }
+}

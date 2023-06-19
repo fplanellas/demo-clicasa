@@ -1,0 +1,55 @@
+@import "../../../styles/variables";
+
+.article {
+    @include article-styles;
+    @include flex-center;
+    background: transparent url("/images/fondo3.png") no-repeat top center local;
+    color: $light-color;
+    margin-top: -2rem;
+    padding-top: 3.5rem;
+
+    &__title {
+        @extend %title-styles;
+        color: $light-color;
+    }
+
+    &__intro {
+        @extend %intro-styles;
+        color: $light-color;
+    }
+
+    &__button {
+        @extend %reset-button-styles;
+        @include flex-center;
+        border: 2px solid $light-color;
+        border-radius: 6.25rem;
+        color: $light-color;
+        font-family: $font-family-bold;
+        font-size: 0.875rem;
+        font-weight: 900;
+        margin: 2rem 0 3rem 0;
+        padding: 1rem 2rem;
+        text-transform: uppercase;
+    }
+}
+
+// Media queries
+@media (max-width: 767px) {
+    .article {
+        margin: 0;
+        padding: 1rem;
+
+        &__title {
+            font-size: 1.5rem;
+        }
+
+        &__intro {
+            font-size: 0.875rem;
+            width: 100%;
+        }
+
+        &__button {
+            margin: 1rem;
+        }
+    }
+}

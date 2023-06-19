@@ -1,0 +1,262 @@
+@import "../../../styles/variables";
+
+.container {
+    padding: 0;
+}
+
+.header {
+    // Estilos generales
+    align-items: center;
+    background-color: $light-color;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    box-sizing: border-box;
+    width: 100vw;
+    z-index: 2000;
+
+    &__logo {
+        // Estilos generales para el logo
+        @include flex-center;
+    }
+
+    &__contacto {
+        // Estilos generales para el contacto
+        align-items: center;
+        display: flex;
+
+        div {
+            // Estilos generales para el contenido del contacto
+            align-items: center;
+            display: flex;
+        }
+    }
+
+    &__navbar {
+        // Estilos generales para la barra de navegación
+        a {
+            color: $greyish-brown;
+            font-size: 0.875rem;
+            margin: 0 0.5rem;
+            padding: 0.4rem 0.5rem;
+            text-transform: uppercase;
+        }
+    }
+
+    &__side-icon {
+        cursor: pointer;
+    }
+
+    &__side-menu {
+        // Estilos generales para el menú lateral
+        @include flex-center;
+        border-bottom: 1px solid $warm-grey;
+        display: none;
+        flex-direction: column;
+        margin-right: 1rem;
+        position: relative;
+
+        a {
+            // Estilos generales para los elementos del menú lateral
+            border-bottom: 1px solid $warm-grey;
+            color: $greyish-brown;
+            font-size: 0.875rem;
+            margin: 0;
+            padding: 1rem 0.5rem 1rem 0;
+            text-transform: uppercase;
+            width: 100%;
+        }
+    }
+
+    &__side-menu-items {
+        // Estilos generales para los elementos del menú lateral
+        align-items: flex-start;
+        background-color: $light-color-transparent;
+        display: flex;
+        flex-direction: column;
+        height: 0;
+        opacity: 0;
+        overflow: hidden;
+        padding: 0 1rem 1rem;
+        position: absolute;
+        left: -1rem;
+        top: 1.8rem;
+        transition: height 0.3s ease, opacity 0s linear 0.3s;
+        z-index: 6000;
+        box-sizing: border-box;
+
+        &.open {
+            // Estilos para el menú lateral abierto
+            opacity: 1;
+            height: 14rem;
+            transition: height 0.3s ease, opacity 0.3s linear 0s;
+        }
+    }
+}
+
+.main {
+    // Estilos generales para el contenido principal
+    @include flex-center;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer {
+    // Estilos generales para el footer
+    border-top: 1px solid $light-gray;
+    color: $greyish-brown;
+    margin: auto;
+    margin-bottom: 1rem;
+    position: relative;
+    width: 75%;
+    box-sizing: border-box;
+
+    &__row {
+        // Estilos generales para las filas del footer
+        @include flex-center;
+        justify-content: space-between;
+        padding: 1rem 0;
+    }
+
+    &__bottomRow {
+        // Estilos generales para la última fila del footer
+        padding: 0;
+        border-top: 1px solid $light-gray;
+
+        div {
+            // Estilos generales para los elementos de la última fila
+            margin: auto;
+            width: 33%;
+        }
+    }
+
+    &__contact {
+        // Estilos generales para el contacto en el footer
+        align-items: center;
+        display: flex;
+        justify-content: flex-end;
+        width: 50%;
+
+        &__icon {
+            // Estilos generales para el icono de contacto
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+        }
+    }
+
+    &__group {
+        // Estilos generales para los grupos en el footer
+        @include flex-center;
+    }
+
+    &__links {
+        // Estilos generales para los enlaces en el footer
+        @include flex-center;
+        list-style-type: none;
+        padding: 0;
+
+        li {
+            margin: 0 0.35rem;
+
+            a {
+                color: $greyish-brown;
+                font-family: $font-family;
+                font-size: 0.9rem;
+                text-decoration: none;
+            }
+        }
+    }
+
+    &__social {
+        // Estilos generales para los íconos sociales en el footer
+        @include flex-center;
+        list-style-type: none;
+        margin-left: 0;
+        margin-right: 0;
+
+        li {
+            cursor: pointer;
+            margin-left: 0.65rem;
+        }
+    }
+
+    &__subgroup {
+        // Estilos generales para los subgrupos en el footer
+        @include flex-center;
+        font-family: $font-family;
+        font-size: 1.25rem;
+        font-weight: normal;
+    }
+
+    &__text {
+        // Estilos generales para el texto en el footer
+        color: $greyish-brown;
+        font-family: $font-family;
+        font-size: 0.8rem;
+    }
+}
+
+// Media queries agrupados al final del archivo
+@media (max-width: 1023px) {
+    .header {
+        &__navbar {
+            display: none;
+        }
+
+        &__side-menu {
+            display: block;
+        }
+
+        &__tlfn-contacto {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .header {
+        padding: 0 0.3rem 0 1rem;
+
+        &__logo {
+            width: 10rem;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
+        &__contacto {
+            div {
+                margin-left: -0.6rem;
+            }
+        }
+    }
+
+    .footer {
+        width: 100%;
+        &__row {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        &__bottomRow {
+            div {
+                padding: 1rem 0;
+                width: 100%;
+                border-bottom: 1px solid $light-gray;
+            }
+        }
+
+        &__group {
+            &--end {
+                justify-content: center;
+            }
+        }
+
+        &__subgroup {
+            font-size: 1rem;
+        }
+    }
+}

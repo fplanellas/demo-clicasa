@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import "variables";
+
+html {
+    width: 100%;
+}
+
+body {
+    a {
+        text-decoration: none;
+    }
+    width: 100%;
+    color: $greyish-brown;
+    font-family: $font-family;
+    margin: 0;
+    overflow-x: hidden;
+    padding: 0;
+
+    .simulation-page {
+        height: calc(100vh - 300px);
+        padding: 2rem;
+        box-sizing: border-box;
+    }
+}

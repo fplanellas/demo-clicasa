@@ -1,0 +1,122 @@
+@import "../../../styles/variables";
+
+.article {
+    @include article-styles;
+    @include flex-center;
+    background: transparent url("/images/fondo1.png") no-repeat center center local;
+    padding-bottom: 7rem;
+
+    &__title {
+        @extend %title-styles;
+        background: transparent url("/images/arrow-asset.png") no-repeat;
+        background-position: right 5rem bottom;
+        color: $light-color;
+        font-size: 4.375rem;
+        margin-bottom: 0;
+        padding: 3rem;
+    }
+
+    &__button {
+        @extend %reset-button-styles;
+        background-color: $bluish;
+        border-radius: 3px;
+        color: $light-color;
+        font-family: $font-family-bold;
+        font-size: 1rem;
+        font-weight: 900;
+        padding: 0.9rem;
+        text-transform: uppercase;
+    }
+
+    &__form {
+        @include flex-center;
+        background-color: $light-color;
+        border-radius: 3px;
+        box-shadow: 4px 4px 8px 0 rgba(23, 53, 111, 0.2);
+        padding: 0.5rem 1.62rem;
+    }
+
+    &__input {
+        border: none;
+        font-family: $font-family-light;
+        font-size: 1.125rem;
+        font-weight: 300;
+        margin: 0.5rem;
+        outline: none;
+        padding: 0.5rem;
+        width: 19rem;
+    }
+
+    &__text {
+        color: $light-color;
+        font-family: $font-family-bold;
+        font-size: 1.125rem;
+        font-weight: bold;
+        line-height: 1.44;
+        margin: 1.5rem;
+    }
+
+    &__video {
+        @extend %reset-button-styles;
+        @include flex-center;
+        background: $light-color-transparent url("/images/ico-play.png") no-repeat right
+            0.3rem center;
+        background-size: 30px 30px;
+        border-radius: 6.25rem;
+        color: $bluish;
+        font-family: $font-family-bold;
+        font-size: 0.875rem;
+        font-weight: bold;
+        padding: 0.8rem 4rem 0.5rem 1.5rem;
+        text-transform: uppercase;
+    }
+
+    // Media queries
+    @media (max-width: 767px) {
+        padding: 1rem;
+
+        &__title {
+            padding: 0 1.8rem 1.1rem 1.8rem;
+            font-size: 2.5rem;
+            background-size: 53px 37px;
+            background-position: right 0 bottom;
+        }
+
+        &__form {
+            @include flex-center;
+            flex-direction: column;
+            align-items: stretch;
+            background: transparent;
+            box-shadow: none;
+            width: 90%;
+            border-radius: 0;
+
+            div {
+                @include flex-center;
+                flex-direction: row;
+                justify-content: flex-start;
+                background-color: $light-color;
+                box-shadow: 4px 4px 8px 0 rgba(23, 53, 111, 0.2);
+                padding: 0.4rem 1rem;
+                border-radius: 3px;
+                margin-bottom: 1rem;
+            }
+        }
+
+        &__input {
+            font-size: 0.9rem;
+            width: 80%;
+        }
+
+        &__text {
+            font-family: $font-family;
+            font-size: 0.87rem;
+            font-weight: normal;
+            margin: 0;
+        }
+
+        &__video {
+            display: none;
+        }
+    }
+}

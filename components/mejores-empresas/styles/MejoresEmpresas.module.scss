@@ -1,0 +1,44 @@
+@import "../../../styles/variables";
+
+.article {
+    @include article-styles;
+    @include flex-center;
+    font-family: $font-family-light;
+    padding: 2rem 0 4rem 0;
+
+    &__title {
+        @extend %title-styles;
+        color: $bluish;
+    }
+
+    &__intro {
+        @extend %intro-styles;
+    }
+}
+
+.image-grid {
+    display: grid;
+    grid-gap: 1.8rem;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 2rem;
+}
+
+// Media queries
+@media (max-width: 767px) {
+    .article {
+        padding: 1rem;
+
+        &__title {
+            font-size: 1.5rem;
+        }
+
+        &__intro {
+            font-size: 0.875rem;
+            width: 100%;
+        }
+    }
+
+    .image-grid {
+        grid-template-columns: 1fr;
+    }
+}
