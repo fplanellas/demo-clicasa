@@ -21,6 +21,7 @@ Para instalar y usar este proyecto en su entorno local, siga estos pasos:
 
 ```bash
 git clone https://github.com/<username>/clicasa-next-app.git
+```
 
 2. Entra al directorio del proyecto:
 
