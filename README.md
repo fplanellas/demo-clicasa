@@ -21,3 +21,38 @@ Para instalar y usar este proyecto en su entorno local, siga estos pasos:
 
 ```bash
 git clone https://github.com/<username>/clicasa-next-app.git
+
+2. Entra al directorio del proyecto:
+
+```bash
+cd clicasa-next-app
+
+3. Instala las dependencias:
+
+```bash
+yarn install
+
+4. Ejecuta el proyecto:
+
+```bash
+yarn dev
+
+La aplicación ahora debería estar corriendo
+
+## Vista en producción
+
+La aplicación est subida en vercel con esta url:
+
+https://demo-clicasa-okwyxah2m-fplanellas.vercel.app/
+
+## Buld de producción en local
+
+1. build:
+
+```bash
+yarn build
+
+2. Ejecuta el proyecto:
+
+```bash
+yarn start
