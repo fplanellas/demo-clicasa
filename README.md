@@ -5,7 +5,7 @@ Este proyecto es una aplicación de Next.js que presenta varias secciones inform
 ## Funciones Principales
 - Mostrar información general y beneficios de Clicasa.
 - Usar citas de Breaking Bad consumidas desde una API externa y mostradas en varios lugares del sitio.
-- Creación de una aplicación Server-Side-Rendering (SSR) con getStaticProps para un rendimiento y SEO optimizados.
+- Creación de una aplicación Static Site Generation (SSG) con getStaticProps para un rendimiento y SEO optimizados.
 
 ## Tecnologías utilizadas
 - Next.js
